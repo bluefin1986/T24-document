@@ -1,0 +1,73 @@
+4,19
+SC.PRICE.CHANGE
+
+
+
+SECURITY.NOıDATE.CHANGE
+ı
+ı
+ı
+
+
+
+@(30,1)Security Price Historyü@(1,2)
+@IDıSECURITY.NOıSECURITY.NAMEıDATE.CHANGEıTIME.CHANGEıSOURCEıSOURCE.NAMEıNEW.PRICEıOLD.PRICEıCPN.DATEıCPN.RATEıCAP.RATEıFACTOR
+@IDıSECURITY.NOıF SECURITY.NOıDATE.CHANGEıTIME.CHANGEıF SECURITY.NOıF SOURCEıNEW.PRICEıOLD.PRICEıF SECURITY.NOıF SECURITY.NOıF SECURITY.NOıF SECURITY.NO
+ı5ı10ı15ı20ıı22ı25ı30ı35ı40ı45ı50
+25Lı9Lıı11Lı11Lııı16Lı16Lıııı
+ııL SECURITY.MASTER,COMPANY.NAMEıııL SECURITY.MASTER,PRICE.UPDATE.CODEıL PRICE.UPDATE,SHORT.DESCRıııL SECURITY.MASTER,CPN.DATEıL SECURITY.MASTER,CPN.RATEıL SECURITY.MASTER,CAP.RATEıL SECURITY.MASTER,FACTOR
+ıııııııııııı
+ıııııııııııı
+ıııııııııııı
+ıSecurity No.ıSecurity NameıDateıTimeııPrice SourceıNew PriceıOld PriceıCoupon DateıCoupon RateıCap RateıFactor
+ıııııııııııı
+ıııııııııııı
+
+
+ıııııııııııı
+ıııııııııııı
+ıııııııııııı
+ıııııııııııı
+ıııııııııııı
+ıııııııııııı
+ıııııııııııı
+ıııııııııııı
+SıSııSıMıııMıMıMıMıMıM
+SECURITY.MASTER I SECURITY.NOıSC.PRICE.CHANGE S @ID
+ı
+SECURITY.NO 2ı@ID 1
+ı
+13 1ı2ı3ı4ı5ı6ı7ı8ı9ı10ı11ı12ı13
+
+3 5ı8ı9
+0 
+0 
+0 
+2 2ı1
+
+
+
+
+
+
+
+
+
+
+SC
+Bloomberg Price History
+
+
+
+
+
+
+
+
+
+3
+4_PRADEEP2
+0907211136
+4_PRADEEP2
+GB0010001
+1

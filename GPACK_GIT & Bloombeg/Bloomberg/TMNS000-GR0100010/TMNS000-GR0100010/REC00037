@@ -1,0 +1,73 @@
+4,19
+SECURITY.MASTER
+PRICE.UPDATE.CODE EQ BPIıDATE.LAST.PRICE EQ !TODAY
+@ID
+
+
+
+
+
+
+
+
+@(30,1)Securities updated today by BPIü@(1,2)
+@IDıSHORT.NAMEıLAST.PRICEıDISC.YLD.PERCıDATE.LAST.PRICEıPRICE.TYPE
+@IDıSHORT.NAMEıLAST.PRICEıDISC.YLD.PERCıDATE.LAST.PRICEıPRICE.TYPE
+3ı15ı76ı77ı88ı104
+10Rı35Lı10Rı16Rı11Rı5L
+ııııı
+ııııı
+ıLıııDı
+ııııı
+Sec IDıSecurity NameıLast PriceıDiscount Yield %ıDate Last PriceıPrice Type
+ı
+ııııı
+
+
+ı
+ı
+ı
+ı
+ı
+ı
+ı
+ı
+ııSıSıSıS
+SECURITY.MASTER I @ID
+ıSECURITY.CODE EQ @ID
+@ID 1ı@ID
+View Securityı
+6 1ı2ı3ı4ı5ı6
+
+0 
+0 
+0 
+0 
+1 1
+
+
+
+
+
+
+
+
+
+ALLDATA
+SC
+Securities updated today by BPI
+
+
+
+
+
+
+
+
+
+3
+4_PRADEEP2
+0907211136
+4_PRADEEP2
+GB0010001
+1

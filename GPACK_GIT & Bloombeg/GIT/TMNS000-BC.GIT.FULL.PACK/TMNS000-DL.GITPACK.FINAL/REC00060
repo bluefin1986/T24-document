@@ -1,0 +1,21 @@
+Background/Phantom process control
+EB
+
+3
+3
+INT
+SYSTEM
+N
+N
+BSF
+
+EB.PHANTOM
+
+8
+1_DIM
+0205211305
+
+NG0010001
+1
+
+

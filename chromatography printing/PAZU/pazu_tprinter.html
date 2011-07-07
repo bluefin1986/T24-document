@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PAZU -- 四方在线WEB打印控件DEMO</title>
+<style type="text/css"> 
+.style1 {
+	font-size: 36px;line-height:100%;font-family: "Arial Unicode MS";
+}
+.style3 {
+	color: #99CC00;
+}
+.myDIVClasss{
+	background-color:yellow;border: 1px solid red;padding:5px
+}
+</style>
+<script language="javascript"> 
+
+   //预先选中的纸张 
+   var strDefaultPaper='A4';
+   
+   //1.载入打印机和纸张列表
+  function init(){
+     listPrinters();
+     listPapers();
+     //2.页面载入立即打印
+     //demo();
+  }
+  
+   //列出所有的打印机
+   function listPrinters(){
+     var ps=pazu.TPrinter.getPrinters();
+      //获得是一个以回车换行分隔的字符串
+      // alert(ps);
+      var pa=ps.split("\r\n");
+      for(var i=0;i<pa.length;i++){
+        //alert(pa[i]);
+        var Op = document.createElement("option");
+		Op.text = pa[i];
+		Op.value =pa[i];
+		try{printers.add(Op);}catch(ex){alert(ex.message)}		
+      }                         
+   }
+   //根据选择的打印机列出所有支持的纸张大小
+   function listPapers(){
+      //清空纸张列表框
+      papers.options.length =0;
+      //根据选择的打印机获得所支持的纸张列表
+       var ps=pazu.TPrinter.getPaperForms(printers.value);
+       //获得是一个以回车换行分隔的字符串
+      //alert(ps);
+      var pa=ps.split("\r\n");
+      for(var i=0;i<pa.length;i++){
+        //alert(pa[i]);
+        var Op = document.createElement("option");
+		Op.text = pa[i];
+		Op.value =pa[i];
+		if(pa[i]==strDefaultPaper)Op.selected=true;
+		try{papers.add(Op);}catch(ex){alert(ex.message)}		
+      }
+   }
+   
+   //创建自定义纸张大小
+   function createPaperForm(){
+      //创建自定义纸张大小，返回该纸张格式的名称
+      strDefaultPaper=pazu.TPrinter.createPaper(PaperW.value,PaperH.value);
+      alert('成功创建纸张格式：'+strDefaultPaper);
+     listPapers(); 
+   }
+ 
+   function demo(){
+      /*跳过IE打印选择提示*/
+      var isPromtUser=false;
+      /*页面设置*/
+      var sPaper="A4";
+     sPaper=papers.value;
+     var sHeader=header.value;
+     var sFooter=footer.value;
+     var o=1;
+     if(ori[0].checked==true)o=1;
+     if(ori[1].checked==true)o=2;
+     
+     var sPrinter=printers.value;
+       
+      var isprev=true;
+      if(nopreview.checked==true)isprev=false;
+      var sPT="";
+      var s=window.location.href.toString();
+      s=s.substring(0,s.lastIndexOf("/"));
+      if(PT.checked==true){
+        sPT=s+ "/pt.htm";
+        isprev=true;
+        nopreview.checked=false;
+      }
+
+
+     pazu.TPrinter.marginTop=parseInt(mtop.value);                    //属性 上边距
+     pazu.TPrinter.marginBottom=parseInt(mbottom.value);                 //属性 下边距
+     pazu.TPrinter.marginLeft=parseInt(mleft.value);                   //属性  左边距
+     pazu.TPrinter.marginRight=parseInt(mright.value);                  //属性  右边距
+     pazu.TPrinter.footer=sFooter;                  //属性 页脚
+     pazu.TPrinter.header=sHeader;                  //属性  页眉
+     pazu.TPrinter.orientation=o;                   //属性 整型：纸张方向 1=纵向  2=横向
+     pazu.TPrinter.paperName=sPaper;                //属性   纸张大小名称
+     pazu.TPrinter.printerName=sPrinter;            //属性   打印机名称
+     pazu.TPrinter.isPrintBackground=isPrintBackground.checked;    //属性  是否打印背景 true / false
+     pazu.TPrinter.isZoomOutToFit=isZoomOutToFit.checked;           //属性   是否缩放以适应大小打印 true / false
+     pazu.TPrinter.printTemplate=sPT;                 //属性   打印模板的URL
+     pazu.TPrinter.copies=copies.value;               //属性   打印份数
+     pazu.TPrinter.range=range.value;                 //属性   页面范围
+     pazu.TPrinter.isCopyByCopy=isCopyByCopy.checked; //属性    是否整份打印结束后再打印下一份 true / false
+     //pazu.TPrinter.getDefaultPrinter          //方法    获得默认打印机的对象
+     //pazu.TPrinter.printToDefaultPrinter      //方法  把要打印的字符串输送到默认打印机（配合getDefaultPrinter 使用）
+     //pazu.TPrinter.getPaperForms              //方法    返回所有纸张格式的列表，以vbCrlf 分割
+     //pazu.TPrinter.getPrinters                //方法    返回一个打印机列表，以vbCrlf 分割
+     //pazu.TPrinter.createPaper                //方法    按指定的宽度和高度创建自定义纸张 请看示例
+     //pazu.TPrinter.doPrint                    //方法    执行打印
+     //pazu.TPrinter.doPrint_                   //方法    执行打印但是不进行页面参数设置
+     //pazu.TPrinter.doPreview                  //方法    打印预览
+     //pazu.TPrinter.doPageSetup                //方法    执行页面参数的设置
+     //pazu.TPrinter.showPageSetup              //方法    弹出页面设置窗口
+     //pazu.TPrinter.writeHTMLtoOfficeFile  方法   把HTML导出为Office EXCEL或者 Word格式文件
+     
+     //要指定打印那个Frame只要用javascript 让那个Frame获得焦点就可以了
+     //注意：这种方式下是不能预览的，只能立即打印。否则预览看到的是整个网页，而不是指定的frame
+     if(isfrm.checked){
+        isprev=false;
+        window.frames['myifrm'].focus();
+     }
+     
+     if(isprev){
+        pazu.TPrinter.doPreview();
+     }else{
+        pazu.TPrinter.doPrint(isPromtUser);
+     }
+
+   }
+   
+   String.prototype.trim = function(){
+     return this.replace(/(^\s*)|(\s*$)/g, "");
+   }
+  function isNum (n){
+   if(isNaN(n))return false;
+   return true; 	
+ }
+ 
+</script>
+</head>
+ 
+<body onload="init()">
+<img alt="" src="printer.jpg" width="132" height="135" style="float: left" style="margin-top:20px" />
+<!--引入PAZU 控件-->
+<div style="display:none">
+  <object classid="clsid:AF33188F-6656-4549-99A6-E394F0CE4EA4" codebase="http://www.4Fang.net/4ff/sc_setup.exe" id="pazu" name="pazu">  
+   <param name="License" value="2AE816BA3A24A9BA3F01162E7BF420F4"/>  
+  </object>   
+</div>
+
+<p class="style1"><span class="style3">PAZU PRINT DEMO</span>
+</p>
+<hr />
+
+<p>本版本PAZU 只支持IE， 其他浏览器的支持版本请联系我公司技术部</p>
+<p>&nbsp;</p>
+打 印 机 
+	<select  id="printers" style="width:400px" onchange="listPapers()">
+	</select>
+<br />
+<br />
+
+纸张大小
+	<select  id="papers" style="width:400px">
+	</select>
+<br />
+<br />
+页眉 <input name="header" type="text" style="width: 239px" />&nbsp;&nbsp;
+页脚 <input name="footer" type="text" style="width: 236px" /><br />
+<br />
+方向
+	<input name="ori" type="radio" checked="checked" />纵向&nbsp;
+	<input name="ori" type="radio" />横向(需打印机支持)&nbsp;&nbsp;&nbsp;&nbsp;
+页边距: 上 <input name="mtop" type="text" style="width: 46px" value="15" />&nbsp; 下 
+<input name="mbottom" type="text" style="width: 46px" value="10" />&nbsp; 左 
+<input name="mleft" type="text" style="width: 46px" value="15" />&nbsp; 右 
+<input name="mright" type="text" style="width: 46px" value="10" />&nbsp; （单位mm）<br />
+<br />
+	<input name="isZoomOutToFit" type="checkbox" />是否缩放以适应大小打印&nbsp;&nbsp;
+	<input name="isCopyByCopy" type="checkbox" />是否整份打印结束后再打印下一份<br />
+<br />
+打印份数 <input name="copies" type="text" style="width: 46px" value="1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 页码范围(如:1-5或者1,3,5等，默认为打印全部页) <input name="range" type="text" style="width: 46px" value="" />&nbsp; 
+<br />
+<br />
+	自定义纸张：宽<input name="PaperW" type="text" style="width: 46px" value="180" />mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 高<input name="PaperH" type="text" style="width: 46px" value="200" />mm<input name="BTNCreatePaper" type="button" value="设置纸张" onclick="createPaperForm();" style="width: 100px" /><br />
+<br />
+	<input name="nopreview" type="checkbox" onclick="if(nopreview.checked==true)PT.checked=false;" />
+不预览立即打印&nbsp;&nbsp;
+	<input name="PT" onclick="if(PT.checked==true)nopreview.checked=false;" type="checkbox" />试试Print Template 技术(preview only)<br />
+<br/>
+	<input name="isfrm" type="checkbox"/>指定只打印下面这个IFrame(不预览立即打印)
+<br />
+
+<div style="position:absolute;left:550px;top:150px;width:132px;height:135px;background:url(printer.jpg);"><br/><input name="isPrintBackground" type="checkbox" />是否打印背景</div> 
+<iframe style="width:500px;height:100px;" src="pazu-demo-ifrm.htm" name="myifrm" id="myifrm"></iframe>
+<br />
+<!-- //设置某些页面元素不打印，只要在该元素的样式类class里面添加一个p__就可以了,看myDIV的class-->
+<div class="myDIVClasss p__" id="myDIV">这个DIV和"打印试试"按钮都不会被打印</div>
+	<input class="p__" name="Button1" type="button" value="打印试试！" onclick="demo();" style="width: 301px" />
+</body>
+ 
+</html>
+

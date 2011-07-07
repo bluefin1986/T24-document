@@ -1,0 +1,48 @@
+##
+## This is the default definition for the CATALOG command.
+## Any blank lines or lines starting with '#' are ignored.
+##
+## This defines certain characteristics that the CATALOG command
+## should exhibit. The following variables may be set up :
+##
+## libname		Describes the naming convention for the created shared object.
+## exportname	Describes the naming convention for the export list for ALL
+##				the shared objects.
+## objectdir	Describes the name of the sub-directory to place all the objects in.
+##				(The normal .o files, not the shared objects)
+## maxsize		Maximum size of a shared object before we create a new shared object
+##
+## The following special character sequences may be inserted into the names, and
+## will provide certain substitutions :
+##
+## %n		This is the sequence number from 0 upwards
+## %a		This is the user account name , truncation to 8 characters.
+## %f		This is the source file name 
+##
+## Due to a probelm with NTFS, a directory that contains a large number
+## of files with filenames that are not 8.3, will take ages to search
+## ( > 1min for 1000 files :-( ). Therefore, we omit the account name
+## by default.
+##
+## On NT, its best to have as few dll's as possible, as there is a Virtual
+## memory overhead per dll, therefore the default size is 8MByte (If you
+## make this too large the linker cannot build the dll).
+## As CATALOG bases the size of the dll on the sum of the component objects
+## files, this equates to a dll that is approx 5 MByte.
+##
+## We also attempt to make sure that the users dll's do not need to be
+## relocated as this process causes them to become private (ie not shared) :-(
+## This is done by setting a unique base address for each generated dll.
+## The "baseaddress" entry is used for this, the default is 0x30,000,000 
+## (or 768MByte).  The jBASE system dlls are based at 0x20,000,000 (512MByte)
+## so this value should not be used.  NT System dlls are at 0x70,000,000.
+## The first user dll (normally lib0.dll) will be based at this specified
+## address, with each subsequent one incremented by "maxsize".  This should
+## avoid any overlap since the "maxsize" value is based on the size of the
+## objects and not the dll which is usually about 75% of this figure.
+##
+libname = lib%n.dll
+exportname = libdef.def
+objectdir = objdir
+maxsize = 8M
+baseaddress = 768M

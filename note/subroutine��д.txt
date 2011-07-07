@@ -1,0 +1,12 @@
+$INSERT I_COMMON 认不到的情况
+编译时加上-IT24.BP  Eg. BASIC -IT24.BP TEST1.BP MY
+
+
+CATAlOG 
+反过来就是
+DECATALOG
+
+JSH下是这么写select的
+SELECT FBNK.ACCOUNT
+
+查询一个application， 要在subroutine里引入这个application头文件

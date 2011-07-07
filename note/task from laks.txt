@@ -1,0 +1,16 @@
+Retail Operations -- Cheques for collection -- Foreign Cheques
+--Pay / Return Foreign Cheques 
+
+enter the date you want:   text box
+
+if he enters a value, default that into all the two fields in each row.
+
+if he does ot enter a value, defaul today's date ino all the ..
+
+关联按钮
+ENQUIRY,  OUTSTATION.CHQS.OS 
+EI, OUTSTATION.CHQS.OS
+新建按钮
+BROWSER.TOOLS,  TEST.DEAULT 
+ 
+ 

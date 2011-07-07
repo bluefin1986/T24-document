@@ -1,0 +1,138 @@
+1.       Need set ASCII.VAL.TABLE and ASCII.VALUES to allow UTF8 character in T24
+
+Please refer to this:
+
+LIST F.ASCII.VAL.TABLE "UTF8.ANY"          PAGE    1 10:53:19  27 MAY 2011
+
+ 
+
+@ID............. UTF8.ANY                                                      
+
+@ID............. UTF8.ANY                                                      
+
+ID.............. UTF8.ANY                                                      
+
+DESCRIPTION..... STANDARD TABLE FOR UTF8                                       
+
+START.RANGE..... 32                                                            
+
+END.RANGE....... 65535                                                         
+
+K.SINGLE.VALUE..                                                               
+
+ERR.MESSAGE..... INVALID ANY UTF8                                              
+
+NOTES........... CHARACTERS ALLOWED ARE: ANY           
+
+注：在应用ASCII.VAL.TABLE中按照上面的内容建立一条名称为“UTF8.ANY”的纪录。 
+
+
+
+
+
+LIST F.ASCII.VALUES DEF.VALUE.TBL LANGUAGE LAN.VALUE.TBL PAGE    1 02:43:33  13 JUL 2011
+
+ 
+
+@ID.........    DEF.VALUE.TBL.......    LANGUAGE    LAN.VALUE.TBL.......
+
+ 
+
+IN2VER          STANDARD.VER                                            
+
+IN2DIR          STANDARD.DIR.WIN                                        
+
+IN2SW           STANDARD.SW             GB          STANDARD.SW         
+
+                                        CN          UTF8.ANY            
+
+IN2SSS          STANDARD.SSS            GB          STANDARD.SS         
+
+                                        CN          UTF8.ANY            
+
+IN2SX           STANDARD.SX                                             
+
+IN2TLX          STANDARD.TLX                                            
+
+IN2AA           UTF8.ANY                CN          UTF8.ANY            
+
+IN2A            UTF8.ANY                CN          UTF8.ANY            
+
+IN2AAA          UTF8.ANY                CN          UTF8.ANY            
+
+IN2MNE          STANDARD.MNE                                            
+
+IN2ANY          UTF8.ANY                CN          UTF8.ANY            
+
+IN2SS           STANDARD.SS             GB          STANDARD.SS         
+
+                                        GB          UTF8.ANY            
+
+IN2SWI          STANDARD.SWI            GB          STANDARD.SWI        
+
+                                        CN          UTF8.ANY            
+
+IN2S            UTF8.ANY                GB          STANDARD.S          
+
+                                        CN          UTF8.ANY  
+
+        
+
+
+注：在应用ASCII.VALUES中把纪录id为IN2SW、IN2SX、IN2TLX、IN2AA、IN2A等的记录的相应字段DEF.VALUE.TBL、LANGUAGE和LAN.VALUE.TBL，按照上面的内容修改。
+
+2.       Check your character set in Browser (Web application server)
+
+Add the yellow line to configuration file “t24-ds.xml”.
+
+ 
+
+<tx-connection-factory> 
+
+ 
+
+      <jndi-name>jca/t24ConnectionFactory</jndi-name> 
+
+ 
+
+      <rar-name>jremote-ra.rar</rar-name> 
+
+      <connection-definition>com.jbase.jremote.JConnectionFactory</connection-definition> 
+
+ 
+
+      <config-property name="host" type="java.lang.String">127.0.0.1</config-property> 
+
+      <config-property name="port" type="int">20001</config-property>
+
+ 
+
+      <config-property name="allowInput" type="java.lang.Boolean">true</config-property>
+
+      <config-property name="env" type="java.lang.String">OFS_SOURCE=BROWSERTC</config-property>
+
+      <config-property name="charset" type="java.lang.String">UTF-8</config-property>
+
+ 
+
+      <!--pooling parameters-->
+
+<!--
+
+      <min-pool-size>5</min-pool-size>
+
+      <max-pool-size>20</max-pool-size>
+
+      <prefill>true</prefill>
+
+-->
+
+ 
+
+ 
+
+   </tx-connection-factory>
+
+
+3.    重启Jboss后重新登录T24.
+

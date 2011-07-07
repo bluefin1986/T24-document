@@ -1,0 +1,73 @@
+4,19
+BPI.INCOMING.PRICES
+RETURN.CODE NE 0
+SEC.NO
+
+GLOBUS.UPD.DATE
+Update Date
+
+Y
+
+
+
+@(30,1)Securities rejected by Bloombergü@(1,2)
+@IDıSEC.NOıSEC.NAMEıRETURN.CODEıNO.OF.DAYS.REJECT
+@IDıSEC.NOıSEC.NAMEıRETURN.CODEıNO.OF.DAYS.REJECT
+5ı10ı15ı20ı25
+35Lı12Lı35Lı3Rı3R
+ıııı
+ıııı
+ıııı
+ıııı
+Bloomberg IDıSecurity No.ıSecurity NameıReturn CodeıNo of Days Reject
+ıııı
+ıııı
+
+
+ıııı
+ıııı
+ıııı
+ıııı
+ıııı
+ıııı
+ıııı
+ıııı
+SıSıSıSıS
+BPI.INCOMING.PRICES S @ID
+
+@ID 1
+View feed data
+5 1ı2ı3ı4ı5
+
+0 
+0 
+0 
+0 
+1 1
+
+
+
+
+
+
+
+
+
+
+
+IDs rejected by Bloomberg Pricing
+
+
+
+
+
+
+
+
+
+3
+4_PRADEEP2
+0907211136
+4_PRADEEP2
+GB0010001
+1

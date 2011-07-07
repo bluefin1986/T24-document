@@ -1,0 +1,32 @@
+*
+* I_GIT.BATCH.COMMON
+*
+* INSERT FILE TO HOLD THE COMMON VARIABLES USED BY GIT.BATCH.CALL & GIT.SCHEDULER
+*
+*========================================================================
+*
+* Modification History:
+*
+* 12 OCT 06 - Sathish PS
+*             New Development
+*
+*=========================================================================
+*
+COMMON/GIT.BATCH.COMMON/GIT.BATCH.COMMON$PROCESS.GOAHEAD,
+                        GIT.BATCH.COMMON$FN.GIO,
+                        GIT.BATCH.COMMON$F.GIO,
+                        GIT.BATCH.COMMON$FN.GII,
+                        GIT.BATCH.COMMON$F.GII,
+                        GIT.BATCH.COMMON$RESERVED.1,
+                        GIT.BATCH.COMMON$RESERVED.2,
+                        GIT.BATCH.COMMON$RESERVED.3,
+                        GIT.BATCH.COMMON$RESERVED.4,
+                        GIT.BATCH.COMMON$RESERVED.5,
+                        GIT.BATCH.COMMON$RESERVED.6,
+                        GIT.BATCH.COMMON$RESERVED.7,
+                        GIT.BATCH.COMMON$RESERVED.8,
+                        GIT.BATCH.COMMON$RESERVED.9,
+                        GIT.BATCH.COMMON$RESERVED.10
+*
+* End of File
+*

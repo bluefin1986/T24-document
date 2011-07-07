@@ -1,0 +1,73 @@
+4,19
+SC.PRICE.CHANGE
+BPI.PRICE.STATUS EQ YES
+
+
+DATE.CHANGE
+Date
+EQ
+Y
+
+
+
+@(30,1)No Price Change Securitiesü@(1,2)
+SECURITY.NOıSECURITY.NAMEıNEW.PRICE.DATEıNEW.PRICEıOLD.PRICE.DATEıOLD.PRICEıDOTıSPC.ID.1ıSPC.ID
+SECURITY.NOıF SECURITY.NOıDATE.CHANGEıNEW.PRICEı!COMPANYıOLD.PRICEı"."ıC SECURITY.NO : DOTıC SPC.ID.1 : NEW.PRICE.DATE
+5ı10ı15ı20ı22ı25ııı
+9Lı35Lı11Lı16Lıı16Lııı
+ıL SECURITY.MASTER,COMPANY.NAMEıı@ E.BPI.SC.GET.NEW.PRICEıL DATES,3ı@ E.BPI.GET.OLD.PRICEııı
+ıııııııı
+ıııııııı
+ıııııııı
+Security No.ıSecurity NameıDate of New PriceıNew PriceıDate of Old PriceıOld PriceıııPrice Change Rec ID
+ıııııııı
+ıııııııı
+
+
+ıııııııı
+ıııııııı
+ıııııııı
+ıııııııı
+ıııııııı
+ıııııııı
+ıııııııı
+ıııııııı
+SıMıSıSııSııı
+SC.PRICE.CHANGE S SPC.ID
+
+SECURITY.NO 1
+View Price Change Details
+9 1ı2ı3ı4ı5ı6ı7ı8ı9
+
+0 
+0 
+0 
+0 
+1 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+4_PRADEEP2
+0907211136
+4_PRADEEP2
+GB0010001
+1

@@ -1,0 +1,227 @@
+<HTML>
+	<HEAD>
+		<TITLE>网页使用卡机具ocx样例</TITLE>
+		<script language="javascript">
+
+function Button1_onclick() {
+  HccMagDev.ComPort=parseInt(Text7.value);
+  HccMagDev.baud=parseInt(Text8.value);
+  HccMagDev.parity="N";
+  HccMagDev.databits=8;
+  HccMagDev.stopbits=1;
+  ret=HccMagDev.OpenCommPort();
+  if(ret==1)
+  Text1.value="open"+Text7.value;
+  else
+  Text1.value="error";
+}
+function Button2_onclick() {
+  HccMagDev.port="A";
+  ret=HccMagDev.ExtendPort();
+}
+function Button3_onclick() {
+  HccMagDev.port="B";
+  ret=HccMagDev.ExtendPort();
+}
+
+function Button4_onclick() {
+  HccMagDev.port="C";
+  ret=HccMagDev.ExtendPort();
+}
+function Button16_onclick() {
+  HccMagDev.port="K";
+  ret=HccMagDev.ExtendPort();
+}
+
+function Button5_onclick() {
+  ret=HccMagDev.CloseCommPort();
+  if(ret==1)
+  Text1.value="close";
+  else
+  Text1.value="error";
+}
+
+function Button6_onclick() {
+  HccMagDev.Change=1;
+  HccMagDev.Timeout=100;
+  ret=HccMagDev.GetPin();
+if(ret==1)
+Text2.value=HccMagDev.Password;
+else
+Text2.value="error";
+}
+function Button7_onclick() {
+  HccMagDev.Change=2;
+  HccMagDev.Timeout=100;
+  ret=HccMagDev.GetPin();
+if(ret==1)
+Text2.value=HccMagDev.Password;
+else
+Text2.value="error";
+}
+
+function Button8_onclick() {
+  HccMagDev.Change=1;
+  HccMagDev.Timeout=100;
+  ret=HccMagDev.SjGetPin();
+if(ret==1)
+Text3.value=HccMagDev.Password;
+else
+Text3.value="error";
+}
+function Button9_onclick() {
+  HccMagDev.Change=2;
+  HccMagDev.Timeout=100;
+  ret=HccMagDev.SjGetPin();
+if(ret==1)
+Text3.value=HccMagDev.Password;
+else
+Text3.value="error";
+}
+
+function Button10_onclick() {
+  HccMagDev.TrackNo=2;
+  HccMagDev.Timeout=100;
+  ret=HccMagDev.ReadTrack();
+if(ret==1)
+Text4.value=HccMagDev.Tk_Data2;
+else
+Text4.value="error";
+}
+
+function Button11_onclick() {
+  HccMagDev.TrackNo=3;
+  HccMagDev.Timeout=100;
+  ret=HccMagDev.ReadTrack();
+if(ret==1)
+Text5.value=HccMagDev.Tk_Data3;
+else
+Text5.value="error";
+}
+
+function Button12_onclick() {
+  HccMagDev.TrackNo=23;
+  HccMagDev.Timeout=100;
+  ret=HccMagDev.ReadTrack();
+if(ret==1)
+{
+Text4.value=HccMagDev.Tk_Data2;
+Text5.value=HccMagDev.Tk_Data3;
+}
+else
+{
+Text4.value="error";
+Text5.value="error";
+}
+}
+
+function Button13_onclick() {
+  HccMagDev.TrackNo=2;
+  HccMagDev.Timeout=100;
+  HccMagDev.Tk_Data2=Text4.value;
+  ret=HccMagDev.WriteTrack();
+if(ret==1)
+Text6.value="done";
+else
+Text6.value="error";
+}
+function Button14_onclick() {
+  HccMagDev.TrackNo=3;
+  HccMagDev.Timeout=100;
+  HccMagDev.Tk_Data3=Text5.value;
+  ret=HccMagDev.WriteTrack();
+if(ret==1)
+Text6.value="done";
+else
+Text6.value="error";
+}
+function Button15_onclick() {
+  HccMagDev.TrackNo=23;
+  HccMagDev.Timeout=100;
+  HccMagDev.Tk_Data2=Text4.value;
+  HccMagDev.Tk_Data3=Text5.value;
+  ret=HccMagDev.WriteTrack();
+if(ret==1)
+Text6.value="done";
+else
+Text6.value="error";
+}
+
+		</script>
+	</HEAD>
+	<BODY>
+		<P><FONT face="宋体">为了使控件正常运行，请在浏览器中工具-&gt;internet选项-&gt;安全-&gt;</FONT>
+			<OBJECT id="HccMagDev" codeBase="HccMagDev.ocx" height="0" hspace="0" width="0" align="center"
+				vspace="0" classid="CLSID:2E40B48C-6DAC-435A-82B4-672AF9604EBB">
+			</OBJECT>
+			<FONT face="宋体">自定义安全级别中选项（ActiveX控件和插件） 中启用启用ActivX即可。</FONT></P>
+		<P>
+
+			<TD><FONT face="宋体">串口选择:</FONT></TD>
+			<INPUT id="Text7" type="text" name="Text7">
+			<TD><FONT face="宋体">波特率:</FONT></TD>
+			<INPUT id="Text8" type="text" name="Text8">
+		<P>
+		</P>
+			<INPUT id="Button1" type="button" value="打开串口" name="Button1" onclick="return Button1_onclick()">			
+			
+			<INPUT id="Button5" type="button" value="关闭串口" name="Button5" onclick="return Button5_onclick()">
+			<TD><FONT face="宋体">串口状态：</FONT></TD>
+			<INPUT id="Text1" type="text" name="Text1">
+		</P>
+		<P>
+			<TD><FONT face="宋体">BP盒选择</FONT></TD>
+			<INPUT id="Button2" type="button" value="打开A口" name="Button2" onclick="return Button2_onclick()">
+			<INPUT id="Button3" type="button" value="打开B口" name="Button3" onclick="return Button3_onclick()">
+			<INPUT id="Button4" type="button" value="打开C口" name="Button4" onclick="return Button4_onclick()">
+			<INPUT id="Button16" type="button" value="打开K口" name="Button16" onclick="return Button16_onclick()">
+		</P>
+		<P>
+			<TD><FONT face="宋体">非加密密码键盘</FONT></TD>
+
+			<INPUT id="Button6" type="button" value="输入密码" name="Button6" onclick="return Button6_onclick()">
+		
+			<INPUT id="Button7" type="button" value="请再输入密码" name="Button7" onclick="return Button7_onclick()">
+			<TD><FONT face="宋体">输入密码为:</FONT></TD>
+			
+			<INPUT id="Text2" type="text" name="Text2">
+		</P>
+		<P>
+			<TD><FONT face="宋体">加密密码键盘</FONT></TD>
+
+			<INPUT id="Button8" type="button" value="输入密码" name="Button8" onclick="return Button8_onclick()">
+		
+			<INPUT id="Button9" type="button" value="请再输入密码" name="Button9" onclick="return Button9_onclick()">
+			<TD><FONT face="宋体">输入密码为:</FONT></TD>
+			
+			<INPUT id="Text3" type="text" name="Text3">
+		</P>
+		<P>
+			<TD><FONT face="宋体">磁卡读写器:</FONT></TD>
+		<P>
+		</P>
+			<INPUT id="Button10" type="button" value="读2道" name="Button10" onclick="return Button10_onclick()">
+
+			<INPUT id="Button11" type="button" value="读3道" name="Button11" onclick="return Button11_onclick()">
+
+			<INPUT id="Button12" type="button" value="读23道" name="Button12" onclick="return Button12_onclick()">
+			<P>
+			<TD><FONT face="宋体">2道信息为:</FONT></TD>
+			<INPUT id="Text4" type="text" name="Text4" style="WIDTH: 800px">
+			</P>
+			<P>
+			<TD><FONT face="宋体">3道信息为:</FONT></TD>
+			<INPUT id="Text5" type="text" name="Text5" style="WIDTH: 800px">
+			</P>
+			<INPUT id="Button13" type="button" value="写2道" name="Button13" onclick="return Button13_onclick()">
+
+			<INPUT id="Button14" type="button" value="写3道" name="Button14" onclick="return Button14_onclick()">
+
+			<INPUT id="Button15" type="button" value="写23道" name="Button15" onclick="return Button15_onclick()">			<TD><FONT face="宋体">操作结果:</FONT></TD>
+			
+			<INPUT id="Text6" type="text" name="Text6">
+		</P>
+
+
+	</BODY>
+</HTML>

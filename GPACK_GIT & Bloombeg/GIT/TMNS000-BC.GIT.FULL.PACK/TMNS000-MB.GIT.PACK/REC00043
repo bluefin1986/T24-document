@@ -1,0 +1,73 @@
+7,49
+GIT.PROCESS.IN.DETAILS
+
+
+
+@ID
+Interface ID
+
+
+
+
+MB.GIT.IN.PRO.RTN
+
+HDR1ıJDR2ıDATE.HDRıHDR2ı@IDıTXN.IDıGLOBUS.IDıMSG.STATUSıIN.OFS.MSGıOUT.OFS.MSG
+"Details of Inward "ı" Messages Processed through GIT"ı"Date :"ı!TODAYı@IDıTXN.IDıGLOBUS.IDıMSG.STATUSıIN.OFS.MSGıOUT.OFS.MSG
+1,1ı45,1ı50,2ı60,2ı1ı2ı6ı20ı45ı55
+60Lıı7Lı10Lı40Lı40Rı40Rı30Lı50Lı50L
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+@IDıııı@IDıT24 Txn IDıRecord IDıMessage StatusıIn MessageıOut Message
+CLASS-ENQ.H.TITLEıCLASS-ENQ.H.TITLEıCLASS-ENQ.H.DATA.LABELıCLASS-ENQ.H.DATAıııııı
+HEADERıHEADERıHEADERıHEADERıııııı
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+ııııııııı
+SıııııMıMıSıSıS
+
+
+
+
+10 1ı2ı3ı4ı5ı6ı7ı8ı9ı10
+
+2 6ı7
+0 
+0 
+0 
+
+
+
+
+
+
+
+
+
+
+NO.SELECTION
+
+GIT Inward Processing Details
+
+
+
+
+
+
+
+
+
+3
+19_RDURAI.1___OFS_BUILD.CONTROL
+0802151213
+19_RDURAI.1_OFS_BUILD.CONTROL
+GB0010001
+1

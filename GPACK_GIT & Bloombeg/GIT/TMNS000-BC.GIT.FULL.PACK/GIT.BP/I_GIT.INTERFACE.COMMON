@@ -1,0 +1,14 @@
+COMMON/GIT.INTERFACE/GIT.FORMATTED.FINAL.RLIST,GIT.INT.ID,
+*-----------------------------------------
+* Store all the File Variables open in Load
+*------------------------------------------
+FN.GIT.INTERFACE,               FV.GIT.INTERFACE,
+FN.GIT.INTERFACE.WRK,           FV.GIT.INTERFACE.WRK,
+FN.GIT.LOAD.TYPE.DETAILS.WRK,   FV.GIT.LOAD.TYPE.DETAILS.WRK,
+
+*----------------------------------------------------------
+GIT.RECORD,                       GIT.MODE,
+GIT.RECORD.ALL,                   GIT.MERGE.TYPE,
+GIT.TRANSPORT.ID,                 GIT.PROCESS.SPEED,
+GIT.OUT.CALL,                     GIT.RECORD.DELIM,
+GIT.ERROR.STOP,                   CONTROL.LIST.FXD.CNT

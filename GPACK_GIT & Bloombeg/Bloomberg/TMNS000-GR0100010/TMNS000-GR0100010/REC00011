@@ -1,0 +1,73 @@
+4,19
+OFS.REQUEST.DETAIL
+APPLICATION EQ BPI.INCOMING.PRICES SECURITY.MASTERıSTATUS EQ ERRORıVERSION EQ BPI.PRICE.UPD
+APPLICATION
+
+BPI.REC.RECV.DATE
+Update Date
+
+Y
+
+
+
+@(20,1)Rejected by Globus in applicationü@(1,2)
+@IDıTRANS.REFERENCEıDATE.TIME.RECDıSTATUSıMSG.OUTıAPPLICATIONıAPP.PıAPP
+@IDıTRANS.REFERENCEıDATE.TIME.RECDıSTATUSıMSG.OUTıAPPLICATIONıB C APPLICATIONıAPPLICATION
+ı15ı20ı25ı30ııPı54,1
+16Lı30Lı20Lı10Lı100Lı25Lıı25L
+ııııııı
+ııııııı
+ııııııı
+ıııııııNEWPAGE
+ORD IdıSecurity IdıDate Time RecdıStatus of ProcessıError Messageııı
+ııııııı
+ıııııııHEADER
+
+
+ııııııı
+ııııııı
+ııııııı
+ııııııı
+ııııııı
+ııııııı
+ııııııı
+ııııııı
+SıSıSıSıSıSııS
+OFS.REQUEST.DETAIL S @ID
+
+TRANS.REFERENCE 2
+View Details
+6 1ı2ı3ı4ı5ı6
+
+0 
+1 7
+1 8
+0 
+1 1
+
+
+
+
+
+
+
+
+
+ALLDATA
+
+Updates rejected by OFS
+
+
+
+
+
+
+
+
+
+4
+4_PRADEEP2
+0907211136
+4_PRADEEP2
+GB0010001
+1
